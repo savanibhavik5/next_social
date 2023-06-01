@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useRouter } from "next/router";
+import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { userLogin } from "../redux/actions";
 
 const Login = () => {
   const [input, setInput] = useState({
@@ -11,6 +14,7 @@ const Login = () => {
   let [verified, setVerified] = useState(false);
   const [msg, setMsg] = useState("");
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const onChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
@@ -34,7 +38,7 @@ const Login = () => {
           input.password
       );
       const data = await res.data;
-      console.log(data);
+      // console.log(data);
       if (data.length === 0) {
         setMsg("Email Not Found In Our Database Please Register First");
       } else {
@@ -42,16 +46,22 @@ const Login = () => {
         localStorage.setItem("fullname", data[0].fullname);
         localStorage.setItem("email", data[0].email);
         localStorage.setItem("id", data[0].id);
-        router.push("/Components/Registration");
+        dispatch(userLogin(data));
+        // router.push("/Components/Registration");
       }
       //   dispatch(getUserDetail(userinfo));
     }
   };
+
+  const signup = () => {
+    setTimeout(() => router.push("/Components/Registration"), 200);
+    setMsg("Redirect to Signup Page");
+  };
   return (
     <div>
-      <section class="background-radial-gradient overflow-hidden">
+      <section className="background-radial-gradient overflow-hidden">
         <style></style>
-        <section className="bg-dark ">
+        <section className="bg-light ">
           <div className="container-fluid h-custom">
             <div className="row min-vh-100 d-flex justify-content-center align-items-center h-100">
               <div className="col-md-9 col-lg-6 col-xl-5">
@@ -94,7 +104,7 @@ const Login = () => {
                     </p>
                   </div>
                   <div className=" mb-4">
-                    <label className="form-label" for="form3Example3">
+                    <label className="form-label" htmlFor="form3Example3">
                       Email address
                     </label>
                     <input
@@ -108,13 +118,13 @@ const Login = () => {
                     />
                   </div>
                   <div className=" mb-3">
-                    <label className="form-label" for="form3Example4">
+                    <label className="form-label" htmlFor="form3Example4">
                       Password
                     </label>
                     <input
                       type="password"
                       id="form3Example4"
-                      className="form-control form-control-lg"
+                      className="form-control form-control-lg border"
                       placeholder="Enter password"
                       name="password"
                       onChange={onChange}
@@ -131,7 +141,7 @@ const Login = () => {
                       />
                       <label
                         className="form-check-label text-dark"
-                        for="form2Example3"
+                        htmlFor="form2Example3"
                       >
                         Remember me
                       </label>
@@ -159,9 +169,9 @@ const Login = () => {
                     </button>
                     <p className="small fw-bold text-dark mt-2 pt-1 mb-0">
                       Don't have an account?
-                      <a href="#!" className="link-danger">
+                      <Link onClick={signup} href="#!" className="link-danger">
                         Register
-                      </a>
+                      </Link>
                     </p>
                   </div>
                 </form>

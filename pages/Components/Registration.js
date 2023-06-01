@@ -82,8 +82,12 @@ const Registration = () => {
           setMsg(
             input.fullname + " Your Account Created Successfully, Login Now "
           );
-          setTimeout(() => router.push("/Components/Login"));
-        }, 1000);
+          setTimeout(
+            () => router.push("/Components/Login"),
+            setMsg("Redirect to Login"),
+            1500
+          );
+        });
     }
   };
   const handleCaptchaChange = (value) => {
@@ -91,9 +95,13 @@ const Registration = () => {
     setVerified(true);
     // You can perform any validation or store the Captcha value in your state
   };
+  const login = () => {
+    setTimeout(() => router.push("/Components/Login"), 500);
+    setMsg("Redirect to Login Page");
+  };
 
   return (
-    <section className="vh-100" style={{ backgroundColor: "#eee" }}>
+    <section className="vh-100  bg-glass">
       <div className="container h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-lg-12 col-xl-11">
@@ -272,7 +280,9 @@ const Registration = () => {
                       </div>
                       <div className="d-flex justify-content-center  align-items-center mx-4 mb-3 mb-lg-4">
                         Already Register?
-                        <button className="btn btn-lg mx-2">Login</button>
+                        <button className="btn btn-lg mx-2" onClick={login}>
+                          Login
+                        </button>
                       </div>
                     </form>
                   </div>
