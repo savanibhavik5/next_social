@@ -1,41 +1,47 @@
 import React, { useState } from "react";
-import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
-import { userLogin } from "../redux/actions";
+import { getUser, setUser } from "../redux/actions";
+import * as Yup from "yup";
+import { useFormik } from "formik";
+import axios from "axios";
 
 const Login = () => {
-  const [input, setInput] = useState({
-    password: "",
-    email: "",
-  });
   let [verified, setVerified] = useState(false);
-  const [msg, setMsg] = useState("");
   const router = useRouter();
   const dispatch = useDispatch();
-
-  const onChange = (e) => {
-    setInput({ ...input, [e.target.name]: e.target.value });
-  };
-
+  const [msg, setMsg] = useState("");
   const handleCaptchaChange = (value) => {
-    console.log("Captcha value:", value);
+    // console.log("Captcha value:", value);
     setVerified(true);
-    // You can perform any validation or store the Captcha value in your state
   };
+  const loginvalidator = Yup.object({
+    email: Yup.string().email().required("Please Enter Valid Email"),
+    password: Yup.string().min(6).required("please Enter Valid Password"),
+  });
 
+  const initialValues = { email: "", password: "" };
+  const formik = useFormik({
+    initialValues,
+    validationSchema: loginvalidator,
+
+    onSubmit: (values) => {
+      dispatch(getUser(values));
+      formik?.resetForm();
+    },
+  });
   const login = async (e) => {
     e.preventDefault();
-    if (input.email === "" || input.password === "") {
+    if (formik?.values?.email === "" || formik?.values?.password === "") {
       setMsg("Please Enter Your Detail Properly");
     } else {
       const res = await axios.get(
         "http://localhost:1234/user?email=" +
-          input.email +
+          formik?.values?.email +
           "&password=" +
-          input.password
+          formik?.values?.password
       );
       const data = await res.data;
       // console.log(data);
@@ -46,16 +52,11 @@ const Login = () => {
         localStorage.setItem("fullname", data[0].fullname);
         localStorage.setItem("email", data[0].email);
         localStorage.setItem("id", data[0].id);
-        dispatch(userLogin(data));
-        // router.push("/Components/Registration");
+        dispatch(setUser(data[0]));
+        router.push("/Components/Registration");
       }
       //   dispatch(getUserDetail(userinfo));
     }
-  };
-
-  const signup = () => {
-    setTimeout(() => router.push("/Components/Registration"), 200);
-    setMsg("Redirect to Signup Page");
   };
   return (
     <div>
@@ -72,7 +73,10 @@ const Login = () => {
                 />
               </div>
               <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1 bg-glass  p-3 rounded">
-                <form onSubmit={login}>
+                <form
+                  onSubmit={login}
+                  // onSubmit={formik?.handleSubmit}
+                >
                   <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                     <p className="lead fw-normal text-dark mb-0 me-3">
                       Sign In With
@@ -86,7 +90,7 @@ const Login = () => {
 
                     <button
                       type="button"
-                      className="btn btn-primary btn-floating mx-1"
+                      className="btn btn-primary btn-floating text-dark bg-primary mx-1"
                     >
                       <i className="fab fa-twitter"></i>
                     </button>
@@ -103,6 +107,7 @@ const Login = () => {
                       Or
                     </p>
                   </div>
+                  <div className="text-danger h5 text-center">{msg}</div>
                   <div className=" mb-4">
                     <label className="form-label" htmlFor="form3Example3">
                       Email address
@@ -110,12 +115,16 @@ const Login = () => {
                     <input
                       type="email"
                       id="form3Example3"
-                      onChange={onChange}
-                      value={input.email}
+                      value={formik?.values?.email}
+                      onChange={formik?.handleChange}
+                      onBlur={formik?.onBlur}
                       name="email"
                       className="form-control form-control-lg border"
                       placeholder="Enter a valid email address"
                     />
+                    {formik?.errors?.email && formik?.touched?.email ? (
+                      <p className="form-error">{formik?.errors?.email}</p>
+                    ) : null}
                   </div>
                   <div className=" mb-3">
                     <label className="form-label" htmlFor="form3Example4">
@@ -127,8 +136,9 @@ const Login = () => {
                       className="form-control form-control-lg border"
                       placeholder="Enter password"
                       name="password"
-                      onChange={onChange}
-                      value={input.password}
+                      value={formik?.values?.password}
+                      onChange={formik?.handleChange}
+                      onBlur={formik?.handleBlur}
                     />
                   </div>
                   <div className="d-flex justify-content-between align-items-center">
@@ -157,19 +167,21 @@ const Login = () => {
                       // 6LdqclUmAAAAAOUPNWTYhjj0RHYpKHx4p7Kg5yru
                     />
                   </div>
-                  <div className="text-danger h5">{msg}</div>
                   <div className="text-center text-lg-start mt-4 pt-2">
                     <button
                       type="submit"
                       className="btn btn-primary btn-lg"
                       style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
-                      disabled={input.email === "" || input.password === ""}
+                      // disabled={input.email === "" || input.password === ""}
                     >
                       Login
                     </button>
                     <p className="small fw-bold text-dark mt-2 pt-1 mb-0">
                       Don't have an account?
-                      <Link onClick={signup} href="#!" className="link-danger">
+                      <Link
+                        href="/Components/Registration"
+                        className="link-danger"
+                      >
                         Register
                       </Link>
                     </p>
