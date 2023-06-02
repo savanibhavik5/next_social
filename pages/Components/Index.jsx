@@ -20,7 +20,6 @@ export const getStaticProps = async () => {
 };
 
 const Index = ({ postdata, commentsdata }) => {
-  const comments = useSelector((state) => state?.user?.allcomments);
   let [liked, setLiked] = useState(false);
   let [show, setShow] = useState(false);
   let [comment, setComment] = useState("");
@@ -28,17 +27,37 @@ const Index = ({ postdata, commentsdata }) => {
   const showhandle = () => {
     setShow(!show);
   };
+  const comments = useSelector((state) => state?.user?.allcomments);
   const fetchPost = useSelector((state) => state?.user?.allpost);
+  const fetchUser = useSelector((state) => state?.user?.user);
+  const filterComment = comments.filter((com) => com?.post_id === fetchPost?.post_id);
+
   const dispatch = useDispatch();
+
+  const addNewComment = (e) => {
+    e.preventDefault();
+    const request = currentId === null;
+    axios
+      .post("http://localhost:1234/comments", {
+        id: uuidv4(),
+        post_id: postid,
+        comment_text: comment,
+        user_id: fetchUser?.id,
+        comment_dp: fetchUser?.userdp,
+        comment_by: fetchUser?.fullname,
+      })
+      .then((res) => {
+        setComment("");
+        setCurrentId(null);
+        dispatch(commentsdata(res));
+      });
+  };
+
+  console.log(filterComment);
   useEffect(() => {
     dispatch(getAllPosts(postdata));
     dispatch(getAllComments(commentsdata));
   }, []);
-  const addNewComment = () => {};
-  const filterComment = comments.filter(
-    (com) => com?.post_id === postdata?.postid
-  );
-
   return (
     <div className="row m-3">
       <New_Post />
@@ -88,7 +107,7 @@ const Index = ({ postdata, commentsdata }) => {
                     <i className="fa-solid fa-thumbs-up "></i>
                   )}
 
-                  <h6 className="pt-2 ps-2">{/* {likes?.length} */}</h6>
+                  <h6 className="pt-2 ps-2"> {post?.likes?.length} </h6>
                 </button>
 
                 <button
@@ -97,7 +116,7 @@ const Index = ({ postdata, commentsdata }) => {
                 >
                   <i className="fa-solid fa-comments"></i>
                   <h6 className="pt-2 ps-2 ">
-                    {/* {filterComment.length} */}
+                    {filterComment.length}
                     Comments
                   </h6>
                 </button>
@@ -106,16 +125,54 @@ const Index = ({ postdata, commentsdata }) => {
               {show &&
                 filterComment?.map((data, index) => {
                   return (
-                    <comment
-                      key={index}
-                      commentid={data?.id}
-                      post_id={data?.post_id}
-                      comment_text={data?.comment_text}
-                      comment_by={data?.comment_by}
-                      comment_dp={data?.comment_dp}
-                      // del_comment={delcomment.bind(this, data?.id)}
-                      // edit_comment={() => editCommentHandle(data)}
-                    />
+                    <div className="d-flex m-2 judtify-content-center align-items-center">
+                      <img
+                        src={data?.comment_dp}
+                        alt="image not found"
+                        width="20px"
+                        height="20px"
+                        className="rounded-circle m-1"
+                      />
+                      <div className="">{data?.comment_by}:-</div>
+
+                      <div className="d-inline-flex justify-content-between align-items-center w-100 ">
+                        {mute === true ? (
+                          <div className="d-flex w-100 justify-content-between align-items-center">
+                            <textarea
+                              type="text"
+                              className="form-control w-50"
+                              value={comment}
+                              onChange={(e) => setComment(e.target.value)}
+                            />
+                            <div className="text-decoration-none text-danger mx-1 d-flex outline-non text-end">
+                              <button className="btn " onClick={save_comment}>
+                                Save
+                              </button>
+                              <button className="btn " onClick={del_comment}>
+                                Delete
+                              </button>
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="d-flex w-100 justify-content-between align-items-center">
+                            <div className="">{data?.comment_text}</div>
+                            <div className="text-decoration-none text-danger mx-1 d-flex outline-non text-end">
+                              <button
+                                className="btn align-items-start"
+                                onClick={edit_comment}
+                              >
+                                Edit
+                              </button>
+                              <button className="btn " onClick={del_comment}>
+                                Delete
+                              </button>
+                            </div>
+                          </div>
+                        )}
+
+                        <div className="d-flex  align-items-start"></div>
+                      </div>
+                    </div>
                   );
                 })}
 

@@ -1,7 +1,6 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { getAllComments } from "../redux/actions";
 import { useDispatch } from "react-redux";
-
 
 const comment = ({
   comment_text,
@@ -16,10 +15,20 @@ const comment = ({
 }) => {
   let [comment, setComment] = useState("");
   const [mute, setMute] = useState(false);
-  
+
   const edit_comment = () => {
     setComment(comment_text);
     setMute(!mute);
+  };
+  const save_comment = () => {
+    setMute(!mute);
+    axios
+      .patch(`http://localhost:1234/comments/${commentid}`, {
+        comment_text: comment,
+      })
+      .then((res) => {
+        dispatch(getAllComments());
+      });
   };
 
   const dispatch = useDispatch();
