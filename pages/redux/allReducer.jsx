@@ -1,19 +1,28 @@
 const initialState = {
   user: {},
-  loading: true,
+  allpost: [],
+  allcomments: [],
 };
 const allReducer = (state = initialState, action) => {
   if (action.type === "GET_USER") {
     return {
       ...state,
       user: action.payload,
-      loading: false,
     };
   } else if (action.type === "SET_USER") {
     return {
       ...state,
       user: action.payload,
-      loading: false,
+    };
+  } else if (action.type === "GET_ALL_POSTS") {
+    return {
+      ...state,
+      allpost: action.payload,
+    };
+  } else if (action.type === "GET_ALL_COMMENTS") {
+    return {
+      ...state,
+      allcomments: action.payload,
     };
   } else {
     return state;

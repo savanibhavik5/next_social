@@ -10,12 +10,12 @@ export const getUser = (data) => {
     //     res?.data?.length == 0
     //       ? localStorage.setItem("user", JSON.stringify(res.data))
     //       : (localStorage.setItem("user", JSON.stringify(res.data[0])),
-          dispatch({
-            type: "GET_USER",
-            payload: data,
-          })
-          // );
-      // });
+    dispatch({
+      type: "GET_USER",
+      payload: data,
+    });
+    // );
+    // });
   };
 };
 
@@ -24,6 +24,25 @@ export const setUser = (data) => {
     dispatch({
       type: "SET_USER",
       payload: data,
+    });
+  };
+};
+
+export const getAllPosts = (postdata) => {
+  
+  return function (dispatch) {
+    dispatch({
+      type: "GET_ALL_POSTS",
+      payload: postdata,
+    });
+  };
+};
+export const getAllComments = (commentdata) => {
+  
+  return function (dispatch) {
+    dispatch({
+      type: "GET_ALL_COMMENTS",
+      payload: commentdata,
     });
   };
 };

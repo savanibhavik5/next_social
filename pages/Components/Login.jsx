@@ -49,11 +49,10 @@ const Login = () => {
         setMsg("Email Not Found In Our Database Please Register First");
       } else {
         setMsg("Please Wait Redirecting To Your Account");
-        localStorage.setItem("fullname", data[0].fullname);
-        localStorage.setItem("email", data[0].email);
-        localStorage.setItem("id", data[0].id);
+        localStorage.setItem("userdetail", JSON.stringify(data));
+
         dispatch(setUser(data[0]));
-        router.push("/Components/Registration");
+        router.push("/Components/Home_Page");
       }
       //   dispatch(getUserDetail(userinfo));
     }
@@ -167,15 +166,19 @@ const Login = () => {
                       // 6LdqclUmAAAAAOUPNWTYhjj0RHYpKHx4p7Kg5yru
                     />
                   </div>
-                  <div className="text-center text-lg-start mt-4 pt-2">
-                    <button
+                  <div className="text-center  mt-4 pt-2">
+                    <Link
+                      href="/Components/Post/Index"
                       type="submit"
-                      className="btn btn-primary btn-lg"
+                      className="btn btn-primary bg-primary btn-lg"
                       style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
-                      // disabled={input.email === "" || input.password === ""}
+                      disabled={
+                        formik?.values?.email === "" ||
+                        formik?.values?.password === ""
+                      }
                     >
                       Login
-                    </button>
+                    </Link>
                     <p className="small fw-bold text-dark mt-2 pt-1 mb-0">
                       Don't have an account?
                       <Link
