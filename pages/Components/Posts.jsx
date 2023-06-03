@@ -12,13 +12,13 @@ const Index = ({ allpost, allcomments }) => {
   let [show, setShow] = useState(false);
   let [liked, setLiked] = useState(false);
   let [comment, setComment] = useState("");
-  let [currentId, setCurrentId] = useState(null);
   const dispatch = useDispatch();
   const showhandle = () => {
     setShow(!show);
   };
 
   const fetchUser = useSelector((state) => state?.user?.user);
+  // console.log(fetchUser[0]?.id);
   let currentUserId = "" + fetchUser[0]?.id;
 
   const likeHandle = (postid, likes) => {
@@ -39,10 +39,8 @@ const Index = ({ allpost, allcomments }) => {
         dispatch(getAllPosts());
       });
   };
-  // console.log(fetchUser[0]?.userdp);
   const addNewComment = (e) => {
     e.preventDefault();
-    const request = currentUserId === null;
     axios
       .post("http://localhost:1234/comments", {
         id: uuidv4(),
@@ -54,8 +52,7 @@ const Index = ({ allpost, allcomments }) => {
       })
       .then((res) => {
         setComment("");
-        setCurrentId(null);
-        dispatch(getAllComments(res));
+        dispatch(getAllComments());
       });
   };
   const filterComment = allcomments.filter((com) => com?.post_id === postid);
@@ -66,7 +63,6 @@ const Index = ({ allpost, allcomments }) => {
   return (
     <div className="col-md-12 col-lg-8 col-xl-6 offset-xl-3 offset-lg-2  ">
       <div className="mb-4 p-3 border shadow  rounded rounded-3">
-        {/* <div className="text-danger">{postid}</div> */}
         <div className="d-flex justify-content-between p-2">
           <div className="d-flex">
             <img
@@ -85,6 +81,7 @@ const Index = ({ allpost, allcomments }) => {
           </div>
         </div>
         <div className="m-2"> {detail}</div>
+        {/* <div>current login:-{fetchUser[0]?.fullname}</div> */}
         <div className="d-flex justify-content-center p-3 ">
           <img
             src={image}
@@ -104,15 +101,15 @@ const Index = ({ allpost, allcomments }) => {
               <i className="fa-solid fa-thumbs-up "></i>
             )}
 
-            <h6 className="pt-2 ps-2"> {likes?.length} </h6>
+            <h6 className="px-2 m-2"> {likes?.length} </h6>
           </button>
 
           <button
-            className="form-control post-button post-button d-flex justify-content-center align-items-center m-2"
+            className="form-control post-button d-flex justify-content-center align-items-center m-2"
             onClick={showhandle}
           >
             <i className="fa-solid fa-comments"></i>
-            <h6 className="pt-2 ps-2 ">
+            <h6 className="px-2">
               {filterComment.length}
               Comments
             </h6>
@@ -125,11 +122,7 @@ const Index = ({ allpost, allcomments }) => {
               <Commentcompo
                 key={index}
                 allcomment={data}
-                // commentid={data?.id}
-                // post_id={data?.post_id}
-                // comment_text={data?.comment_text}
-                // comment_by={data?.comment_by}
-                // comment_dp={data?.comment_dp}
+                
               />
             );
           })}

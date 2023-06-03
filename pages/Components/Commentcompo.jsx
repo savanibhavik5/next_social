@@ -53,9 +53,9 @@ const Commentcompo = ({
         alt="image not found"
         width="20px"
         height="20px"
-        className="rounded-circle m-1"
+        className="rounded-full w-6 h-6 m-1"
       />
-      <div className="">{comment_by}:-</div>
+      <div className="w-25">{comment_by}:-</div>
 
       <div className="d-inline-flex justify-content-between align-items-center w-100 ">
         {mute === true ? (
@@ -85,14 +85,14 @@ const Commentcompo = ({
               >
                 Edit
               </button>
-              <button className="btn px-2 " onClick={del_comment}>
+              <button className="btn px-2" onClick={del_comment}>
                 Delete
               </button>
             </div>
           </div>
         )}
 
-        <div className="d-flex  align-items-start"></div>
+        <div className="d-flex align-items-start"></div>
       </div>
     </div>
   );

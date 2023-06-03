@@ -16,16 +16,16 @@ const Registration = () => {
   const [msg, setMsg] = useState("");
   let [verified, setVerified] = useState(false);
 
-  const [inputFocus, setInputFocus] = useState({
-    fullname: false,
-    password: false,
-    email: false,
-    dob: false,
-  });
+  // const [inputFocus, setInputFocus] = useState({
+  //   fullname: false,
+  //   password: false,
+  //   email: false,
+  //   dob: false,
+  // });
 
-  const handleInputFocus = (name, isFocused) => {
-    setInputFocus({ ...inputFocus, [name]: isFocused });
-  };
+  // const handleInputFocus = (name, isFocused) => {
+  //   setInputFocus({ ...inputFocus, [name]: isFocused });
+  // };
 
   const onChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });

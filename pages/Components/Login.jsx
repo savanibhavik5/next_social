@@ -3,11 +3,13 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
-import { getUser, setUser } from "../redux/actions";
+import { getSingleUser, setSingleUser } from "../redux/actions";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import axios from "axios";
+import Head from "next/head";
 
+const initialValues = { email: "", password: "" };
 const Login = () => {
   let [verified, setVerified] = useState(false);
   const router = useRouter();
@@ -22,13 +24,12 @@ const Login = () => {
     password: Yup.string().min(6).required("please Enter Valid Password"),
   });
 
-  const initialValues = { email: "", password: "" };
   const formik = useFormik({
     initialValues,
     validationSchema: loginvalidator,
 
     onSubmit: (values) => {
-      dispatch(getUser(values));
+      dispatch(getSingleUser(values));
       formik?.resetForm();
     },
   });
@@ -51,7 +52,7 @@ const Login = () => {
         setMsg("Please Wait Redirecting To Your Account");
         localStorage.setItem("userdetail", JSON.stringify(data));
 
-        dispatch(setUser(data[0]));
+        dispatch(setSingleUser(data[0]));
         router.push("/Components/Index");
       }
       //   dispatch(getUserDetail(userinfo));
@@ -59,8 +60,9 @@ const Login = () => {
   };
   return (
     <div>
+      <Head> Login</Head>
       <section className="background-radial-gradient overflow-hidden">
-        <style></style>
+      
         <section className="bg-light ">
           <div className="container-fluid h-custom">
             <div className="row min-vh-100 d-flex justify-content-center align-items-center h-100">
@@ -74,7 +76,6 @@ const Login = () => {
               <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1 bg-glass  p-3 rounded">
                 <form
                   onSubmit={login}
-                  // onSubmit={formik?.handleSubmit}
                 >
                   <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                     <p className="lead fw-normal text-dark mb-0 me-3">

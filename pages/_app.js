@@ -4,7 +4,7 @@ import { Provider, useDispatch, useSelector } from "react-redux";
 import { Audio } from "react-loader-spinner";
 import { wrapper, store } from "./redux/Store";
 import { useEffect } from "react";
-import { getPost, setUser } from "./redux/actions";
+import { getPost, setSingleUser } from "./redux/actions";
 import Header from "./Components/Header";
 import { Head } from "next/document";
 
@@ -24,12 +24,12 @@ const MyApp = ({ Component, pageProps }) => {
   const dispatch = useDispatch();
   const data = LocalStorageItem();
   const loading = useSelector((state) => state?.item?.loading);
-  const postsdata = useSelector((post) => post?.allpostReducer?.state);
+  const postsdata = useSelector((post) => post?.user?.allpost);
   useEffect(() => {
     if (data) {
-      dispatch(setUser(data));
+      dispatch(setSingleUser(data));
     } else {
-      dispatch(setUser([]));
+      dispatch(setSingleUser([]));
     }
   }, [data]);
   return (

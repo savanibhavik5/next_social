@@ -100,7 +100,7 @@ const New_Post = () => {
         </Button>
       </div>
 
-      <div className="d-flex justify-content-around  ">
+      <div className="d-flex justify-content-around">
         <button className=" btn  d-flex align-items-center justify-content-center my-2 w-50">
           <i className="fa-solid fa-video  text-danger  "></i>
           <h6 className="pt-1 ps-2 ">Live </h6>
