@@ -30,13 +30,12 @@ export const getSingleUser = (data) => {
       )
       .then((res) => {
         res?.data?.length == 0
-          ? localStorage.setItem("userdetail", JSON.stringify(res.data))
-          : (localStorage.setItem("userdetail", JSON.stringify(res.data[0])),
+          ? localStorage.setItem("userdetail", JSON.stringify(res?.data))
+          : (localStorage.setItem("userdetail", JSON.stringify(res?.data[0])),
             dispatch({
               type: "GET_SINGLE_USER",
               payload: res?.data[0],
             }));
-        console.log(res?.data);
       });
   };
 };
@@ -59,13 +58,19 @@ export const getAllPosts = (postdata) => {
   };
 };
 
-export const getAllComments = (commentdata) => {
-
+export const getAllComments = (getallcommentdata) => {
   return function (dispatch) {
-
     dispatch({
       type: "GET_ALL_COMMENTS",
-      payload: commentdata,
+      payload: getallcommentdata,
+    });
+  };
+};
+
+export const newComment = (data) => {
+  return function (dispatch) {
+    axios?.post("http://localhost:1234/comments", data).then((res) => {
+      dispatch(getAllComments(data));
     });
   };
 };

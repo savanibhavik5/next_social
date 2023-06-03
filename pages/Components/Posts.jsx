@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllComments, getAllPosts } from "../redux/actions";
+import { getAllComments, getAllPosts, newComment } from "../redux/actions";
 import New_Post from "./New_Post";
 import Commentcompo from "./Commentcompo";
 import axios from "axios";
@@ -17,9 +17,8 @@ const Index = ({ allpost, allcomments }) => {
     setShow(!show);
   };
 
-  const fetchUser = useSelector((state) => state?.user?.user);
-  // console.log(fetchUser[0]?.id);
-  let currentUserId = "" + fetchUser[0]?.id;
+  const fetchUser = useSelector((state) => state?.user?.user[0]);
+  let currentUserId = "" + fetchUser?.id;
 
   const likeHandle = (postid, likes) => {
     if (!postid) return;
@@ -27,8 +26,7 @@ const Index = ({ allpost, allcomments }) => {
     const totallikes =
       likeIndex === -1
         ? [...likes, currentUserId]
-        : likes?.filter((like) => like !== currentUserId) || setLiked(false);
-
+        : likes?.filter((like) => like !== currentUserId);
     fetch(`http://localhost:1234/posts/${postid}`, {
       headers: { "Content-Type": "application/json" },
       method: "PATCH",
@@ -36,25 +34,23 @@ const Index = ({ allpost, allcomments }) => {
     })
       .then((res) => res.json())
       .then((serRes) => {
-        dispatch(getAllPosts());
+        dispatch(getAllPosts(serRes));
       });
   };
-  const addNewComment = (e) => {
-    e.preventDefault();
-    axios
-      .post("http://localhost:1234/comments", {
+  const addNewComment = () => {
+    dispatch(
+      newComment({
         id: uuidv4(),
         post_id: postid,
         comment_text: comment,
-        user_id: fetchUser[0]?.id,
-        comment_dp: fetchUser[0]?.userdp,
-        comment_by: fetchUser[0]?.fullname,
+        user_id: fetchUser?.id,
+        comment_dp: fetchUser?.userdp,
+        comment_by: fetchUser?.fullname,
       })
-      .then((res) => {
-        setComment("");
-        dispatch(getAllComments());
-      });
+      );
+    setComment("");
   };
+
   const filterComment = allcomments.filter((com) => com?.post_id === postid);
   useEffect(() => {
     dispatch(getAllPosts(allpost));
@@ -118,19 +114,13 @@ const Index = ({ allpost, allcomments }) => {
 
         {show &&
           filterComment?.map((data, index) => {
-            return (
-              <Commentcompo
-                key={index}
-                allcomment={data}
-                
-              />
-            );
+            return <Commentcompo key={index} allcomment={data} />;
           })}
 
         <div className="d-flex w-100 p-3">
           <img
-            src={fetchUser[0]?.userdp}
-            alt={`image of ${fetchUser[0]?.fullname}`}
+            src={fetchUser?.userdp}
+            alt={`image of ${fetchUser?.fullname}`}
             className=" w-8 h-8 rounded-full"
           />
           <textarea
