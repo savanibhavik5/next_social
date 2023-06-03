@@ -1,18 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { getAllComments } from "../redux/actions";
 import { useDispatch } from "react-redux";
+import axios from "axios";
 
-const comment = ({
-  comment_text,
-  comment_dp,
-  comment_by,
-  post_id,
-  del_comment,
+const Commentcompo = ({
+  // comment_text,
+  // comment_dp,
+  // comment_by,
+  // post_id,
+  // del_comment,
 
-  commentid,
-  currentId,
-  data,
+  // commentid,
+  // currentId,
+  allcomment,
+  // data,
 }) => {
+  const {
+    comment_text,
+    comment_dp,
+    comment_by,
+    post_id,
+    del_comment,
+    id,
+    currentId,
+  } = allcomment;
   let [comment, setComment] = useState("");
   const [mute, setMute] = useState(false);
 
@@ -23,17 +34,17 @@ const comment = ({
   const save_comment = () => {
     setMute(!mute);
     axios
-      .patch(`http://localhost:1234/comments/${commentid}`, {
+      ?.patch(`http://localhost:1234/comments/${id}`, {
         comment_text: comment,
       })
       .then((res) => {
-        dispatch(getAllComments());
+        dispatch(getAllComments(res));
       });
   };
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getAllComments(data));
+    dispatch(getAllComments(allcomment));
   }, []);
   return (
     <div className="d-flex m-2 judtify-content-center align-items-center">
@@ -56,10 +67,10 @@ const comment = ({
               onChange={(e) => setComment(e.target.value)}
             />
             <div className="text-decoration-none text-danger mx-1 d-flex outline-non text-end">
-              <button className="btn " onClick={save_comment}>
+              <button className="btn px-2 " onClick={save_comment}>
                 Save
               </button>
-              <button className="btn " onClick={del_comment}>
+              <button className="btn  px-2" onClick={del_comment}>
                 Delete
               </button>
             </div>
@@ -68,10 +79,13 @@ const comment = ({
           <div className="d-flex w-100 justify-content-between align-items-center">
             <div className="">{comment_text}</div>
             <div className="text-decoration-none text-danger mx-1 d-flex outline-non text-end">
-              <button className="btn align-items-start" onClick={edit_comment}>
+              <button
+                className="btn px-2 align-items-start"
+                onClick={edit_comment}
+              >
                 Edit
               </button>
-              <button className="btn " onClick={del_comment}>
+              <button className="btn px-2 " onClick={del_comment}>
                 Delete
               </button>
             </div>
@@ -84,4 +98,4 @@ const comment = ({
   );
 };
 
-export default comment;
+export default Commentcompo;

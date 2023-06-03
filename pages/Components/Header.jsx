@@ -1,7 +1,9 @@
 import Link from "next/link";
 import React from "react";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const fetchUser = useSelector((state) => state?.user?.user);
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900">
       <div className="flex flex-wrap items-center justify-between mx-auto py-2 px-4">
@@ -26,8 +28,8 @@ const Header = () => {
           >
             <span className="sr-only">Open user menu</span>
             <img
-              className="w-8 h-8 rounded-full"
-              // src="/docs/images/people/profile-picture-3.jpg"
+              className="w-8 h-8  rounded-full"
+              src={fetchUser[0]?.userdp}
               alt="user photo"
             />
           </button>

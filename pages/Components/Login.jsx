@@ -52,7 +52,7 @@ const Login = () => {
         localStorage.setItem("userdetail", JSON.stringify(data));
 
         dispatch(setUser(data[0]));
-        router.push("/Components/Home_Page");
+        router.push("/Components/Index");
       }
       //   dispatch(getUserDetail(userinfo));
     }
@@ -167,8 +167,7 @@ const Login = () => {
                     />
                   </div>
                   <div className="text-center  mt-4 pt-2">
-                    <Link
-                      href="/Components/Post/Index"
+                    <button
                       type="submit"
                       className="btn btn-primary bg-primary btn-lg"
                       style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
@@ -178,7 +177,7 @@ const Login = () => {
                       }
                     >
                       Login
-                    </Link>
+                    </button>
                     <p className="small fw-bold text-dark mt-2 pt-1 mb-0">
                       Don't have an account?
                       <Link
