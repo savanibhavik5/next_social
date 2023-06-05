@@ -1,13 +1,20 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import { useSelector } from "react-redux";
 
 const Header = () => {
+  const router = useRouter();
+  const logout = () => {
+    localStorage.clear();
+    router.push("/Components/Login");
+  };
+
   const fetchUser = useSelector((state) => state?.user?.user);
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900">
       <div className="flex flex-wrap items-center justify-between mx-auto py-2 px-4">
-        <Link href="/Components/Index" className="flex items-center">
+        <Link href="/Index" className="flex items-center">
           <img
             src="https://flowbite.com/docs/images/logo.svg"
             className="h-8 mr-3"
@@ -71,12 +78,12 @@ const Header = () => {
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
+                <button
+                  onClick={logout}
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                 >
                   Sign out
-                </a>
+                </button>
               </li>
             </ul>
           </div>

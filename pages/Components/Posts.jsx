@@ -7,7 +7,15 @@ import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 
 const Index = ({ allpost, allcomments }) => {
-  const { createdBy, detail, image, userdp, id: postid, likes } = allpost;
+  const {
+    user_id,
+    createdBy,
+    detail,
+    image,
+    userdp,
+    id: postid,
+    likes,
+  } = allpost;
 
   let [show, setShow] = useState(false);
   let [liked, setLiked] = useState(false);
@@ -16,6 +24,15 @@ const Index = ({ allpost, allcomments }) => {
   const showhandle = () => {
     setShow(!show);
   };
+
+  useEffect(() => {
+    dispatch(getAllPosts(allpost));
+    dispatch(getAllComments(allcomments));
+    dispatch(getAllComments());
+  }, []);
+
+  const AllCommnets = useSelector((state) => state.user.allcomments);
+  // console.log(AllCommnets)
 
   const fetchUser = useSelector((state) => state?.user?.user[0]);
   let currentUserId = "" + fetchUser?.id;
@@ -37,7 +54,7 @@ const Index = ({ allpost, allcomments }) => {
         dispatch(getAllPosts(serRes));
       });
   };
-  const addNewComment = () => {
+  const commentHandle = () => {
     dispatch(
       newComment({
         id: uuidv4(),
@@ -47,15 +64,12 @@ const Index = ({ allpost, allcomments }) => {
         comment_dp: fetchUser?.userdp,
         comment_by: fetchUser?.fullname,
       })
-      );
+    );
     setComment("");
   };
 
-  const filterComment = allcomments.filter((com) => com?.post_id === postid);
-  useEffect(() => {
-    dispatch(getAllPosts(allpost));
-    dispatch(getAllComments(allcomments));
-  }, []);
+  const filterComment = AllCommnets.filter((com) => com?.post_id === postid);
+
   return (
     <div className="col-md-12 col-lg-8 col-xl-6 offset-xl-3 offset-lg-2  ">
       <div className="mb-4 p-3 border shadow  rounded rounded-3">
@@ -68,11 +82,19 @@ const Index = ({ allpost, allcomments }) => {
               height="30px"
               className="rounded-circle"
             />
-            <span className="ps-3">{createdBy} </span>
+            <span className="ps-3">
+              {createdBy}:-{user_id}---{currentUserId}{" "}
+            </span>
           </div>
           <div className="d-flex align-items-center justify-content-center">
             <div className=" ">
-              <button className="btn btn-light px-2 py-1 border">×</button>
+              <button
+                className={`btn btn-light px-2 py-1 border ${
+                  currentUserId != user_id ? "d-none" : "d-block"
+                }`}
+              >
+                ×
+              </button>
             </div>
           </div>
         </div>
@@ -114,7 +136,13 @@ const Index = ({ allpost, allcomments }) => {
 
         {show &&
           filterComment?.map((data, index) => {
-            return <Commentcompo key={index} allcomment={data} />;
+            return (
+              <Commentcompo
+                key={index}
+                allcomment={data}
+                commentHandle={commentHandle}
+              />
+            );
           })}
 
         <div className="d-flex w-100 p-3">
@@ -135,7 +163,7 @@ const Index = ({ allpost, allcomments }) => {
               <button
                 disabled={comment == ""}
                 className="btn btn-primary rounded-9"
-                onClick={addNewComment}
+                onClick={commentHandle}
               >
                 Add Comment
               </button>

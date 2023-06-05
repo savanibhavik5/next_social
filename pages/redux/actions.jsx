@@ -60,9 +60,36 @@ export const getAllPosts = (postdata) => {
 
 export const getAllComments = (getallcommentdata) => {
   return function (dispatch) {
-    dispatch({
-      type: "GET_ALL_COMMENTS",
-      payload: getallcommentdata,
+      axios.get("http://localhost:1234/comments").then((res) => {
+      dispatch({
+        type: "GET_ALL_COMMENTS",
+        payload: res.data,
+      });
+    });
+  };
+};
+
+export const updateComment = (updatedComment) => {
+  return function (dispatch) {
+    axios
+      .patch(
+        `http://localhost:1234/comments/${updatedComment.id}`,
+        updatedComment
+      )
+      .then((res) => {
+        dispatch({
+          type: "UPDATE_COMMENT",
+          payload: res.updatedComment,
+        });
+      });
+  };
+};
+
+export const deleteComment = (data) => {
+  
+  return function (dispatch) {
+    axios.delete(`http://localhost:1234/comments/${data.id}`).then((res) => {
+      dispatch(getAllComments(data?.id));
     });
   };
 };

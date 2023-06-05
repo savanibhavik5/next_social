@@ -35,6 +35,11 @@ const allReducer = (state = initialState, action) => {
       ...state,
       allcomments: action.payload,
     };
+  } else if (action.type === "DELETE_COMMENT") {
+    return {
+      ...state,
+      allcomments: action.payload,
+    };
   } else {
     return state;
   }

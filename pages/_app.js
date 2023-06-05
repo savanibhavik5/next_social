@@ -7,7 +7,20 @@ import { useEffect } from "react";
 import { getPost, setSingleUser } from "./redux/actions";
 import Header from "./Components/Header";
 import { Head } from "next/document";
-
+export const getStaticProps = async () => {
+  const postdata = await fetch("http://localhost:1234/posts").then((res) =>
+    res.json()
+  );
+  const commentsdata = await fetch("http://localhost:1234/comments").then(
+    (res) => res.json()
+  );
+  return {
+    props: {
+      postdata,
+      commentsdata,
+    },
+  };
+}
 const LocalStorageItem = () => {
   if (typeof window !== "undefined") {
     let userDetail = localStorage.getItem("userdetail");
