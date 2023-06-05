@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllComments, getAllPosts, newComment } from "../redux/actions";
+import {
+  deletePost,
+  getAllComments,
+  getAllPosts,
+  newComment,
+} from "../redux/actions";
 import New_Post from "./New_Post";
 import Commentcompo from "./Commentcompo";
 import axios from "axios";
@@ -26,16 +31,36 @@ const Index = ({ allpost, allcomments }) => {
   };
 
   useEffect(() => {
-    dispatch(getAllPosts(allpost));
+    dispatch(getAllPosts(posts,allpost));
     dispatch(getAllComments(allcomments));
-    dispatch(getAllComments());
   }, []);
 
+  const posts = useSelector((state) => state?.user?.allpost);
+
   const AllCommnets = useSelector((state) => state.user.allcomments);
-  // console.log(AllCommnets)
 
   const fetchUser = useSelector((state) => state?.user?.user[0]);
   let currentUserId = "" + fetchUser?.id;
+
+  
+  const commentHandle = () => {
+    dispatch(
+      newComment({
+        id: uuidv4(),
+        post_id: postid,
+        comment_text: comment,
+        user_id: fetchUser?.id,
+        comment_dp: fetchUser?.userdp,
+        comment_by: fetchUser?.fullname,
+      })
+    );
+    setComment("");
+  };
+  const del_post = (id) => {
+    dispatch(deletePost({ id }));
+  };
+
+  const filterComment = AllCommnets.filter((com) => com?.post_id === postid);
 
   const likeHandle = (postid, likes) => {
     if (!postid) return;
@@ -54,21 +79,6 @@ const Index = ({ allpost, allcomments }) => {
         dispatch(getAllPosts(serRes));
       });
   };
-  const commentHandle = () => {
-    dispatch(
-      newComment({
-        id: uuidv4(),
-        post_id: postid,
-        comment_text: comment,
-        user_id: fetchUser?.id,
-        comment_dp: fetchUser?.userdp,
-        comment_by: fetchUser?.fullname,
-      })
-    );
-    setComment("");
-  };
-
-  const filterComment = AllCommnets.filter((com) => com?.post_id === postid);
 
   return (
     <div className="col-md-12 col-lg-8 col-xl-6 offset-xl-3 offset-lg-2  ">
@@ -89,6 +99,7 @@ const Index = ({ allpost, allcomments }) => {
           <div className="d-flex align-items-center justify-content-center">
             <div className=" ">
               <button
+                onClick={del_post.bind(this, postid)}
                 className={`btn btn-light px-2 py-1 border ${
                   currentUserId != user_id ? "d-none" : "d-block"
                 }`}
@@ -111,7 +122,7 @@ const Index = ({ allpost, allcomments }) => {
         <div className="d-flex justify-content-around mt-3">
           <button
             className=" form-control post-button d-flex justify-content-center align-items-center m-2"
-            onClick={likeHandle.bind(this, postid, likes)}
+            // onClick={likeHandle.bind(this, postid, likes)}
           >
             {!liked ? (
               <i className="fa-solid fa-thumbs-up text-primary "></i>

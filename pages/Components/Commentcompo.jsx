@@ -14,7 +14,7 @@ const Commentcompo = ({ allcomment }) => {
 
   useEffect(() => {
     dispatch(getAllComments(AllCommnets));
-    dispatch(getAllComments());
+    // dispatch(getAllComments());
   }, []);
 
   const edit_comment = () => {
@@ -30,7 +30,7 @@ const Commentcompo = ({ allcomment }) => {
 
   const del_comment = (id) => {
     dispatch(deleteComment({ id }));
-    console.log(id);
+    // console.log(id);
   };
 
   return (

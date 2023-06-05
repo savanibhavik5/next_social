@@ -1,0 +1,728 @@
+{
+  "user": [
+    {
+      "fullname": "keyLogic Infotech",
+      "email": "savanibhavik55@gmail.com",
+      "password": "1234",
+      "gender": "male",
+      "dob": "1991-12-15",
+      "id": "2",
+      "userdp": "https://cdn.statusqueen.com/dpimages/thumbnail/dp_images_8-1279.jpg"
+    },
+    {
+      "fullname": "Bhavik Savani",
+      "email": "savanibhavik5@gmail.com",
+      "password": "1234",
+      "gender": "male",
+      "dob": "1991-12-15",
+      "id": "1",
+      "userdp": "https://cdn.statusqueen.com/dpimages/thumbnail/dp_images_8-1279.jpg"
+    },
+    {
+      "fname": "zxc",
+      "email": "zxc@zxc.zxc",
+      "password": "Zxcv@123",
+      "gender": "male",
+      "dob": "1111-11-11",
+      "id": "29fce2ce-9dd4-4a97-b7b9-7abd92538e45",
+      "userdp": "https://cdn.statusqueen.com/dpimages/thumbnail/dp_images_8-1279.jpg"
+    }
+  ],
+  "pages": [
+    {
+      "pagename": "React Native community",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"
+    },
+    {
+      "pagename": "Javascript",
+      "image": "https://quocent.com/QUOCENT-CMS/userfiles/StaticBanner/1529923467_Javascript.png"
+    },
+    {
+      "pagename": "Node.js",
+      "image": "https://logos-download.com/wp-content/uploads/2016/09/Node_logo_NodeJS.png"
+    }
+  ],
+  "leftmenu": [
+    {
+      "id": "dgnhjreteg",
+      "name": "Pages",
+      "image": "https://static.vecteezy.com/system/resources/previews/000/366/526/original/flag-vector-icon.jpg"
+    },
+    {
+      "id": "rty6utrjmnretegrdegtye",
+      "name": "Covid Information center",
+      "image": "https://th.bing.com/th/id/OIP.eRDdda91FLD2nsnPuA3JegHaIO?pid=ImgDet&rs=1"
+    },
+    {
+      "id": "tryhrretegrdgedtre",
+      "name": "Friends",
+      "image": "https://www.ifsw.org/wp-content/uploads/2018/03/friends.png"
+    },
+    {
+      "id": "trretegdfg",
+      "name": "Groups",
+      "image": "https://th.bing.com/th/id/OIP.A5rZGnnmCAixyCKce89DzwHaHa?pid=ImgDet&rs=1"
+    },
+    {
+      "id": "utyitretegsdfrgt",
+      "name": "MarketPlace",
+      "image": "https://cdn0.iconfinder.com/data/icons/shopping-and-commerce-2-11/66/94-1024.png"
+    }
+  ],
+  "city": [
+    "banglore",
+    "mumbai",
+    "pune",
+    "Surat"
+  ],
+  "company": [
+    "TCS",
+    "Tech-Mahindra",
+    "TCS",
+    "Tech-Mahindra",
+    "Wipro"
+  ],
+  "posts": [
+    {
+      "createdBy": "keyLogic",
+      "detail": "2nd post",
+      "created_at": "2023-04-21T11:41:00.085Z",
+      "image": "https://images.pexels.com/photos/235986/pexels-photo-235986.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "userdp": "https://th.bing.com/th/id/R.e1707c345d5ac10c80a674030e606643?rik=pOsTg5KBoLuNvw&riu=http%3a%2f%2fwww.snut.fr%2fwp-content%2fuploads%2f2015%2f08%2fimage-de-paysage.jpg&ehk=1O5SWKkGpZ8yU%2b%2fAnLXG1v8k6BKxgyiXgHbOWBW1ir0%3d&risl=1&pid=ImgRaw&r=0",
+      "id": "4ecfa7f9-e7c6-4dc3-afb6-463288a489a0",
+      "user_id": "2",
+      "likes": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
+    },
+    {
+      "createdBy": "Bhavik",
+      "detail": "121212",
+      "created_at": "2023-04-24T12:34:33.098Z",
+      "image": "https://th.bing.com/th/id/R.892bb645c09c766efcc5bc4d0c93094a?rik=slmcvUaa5yToAw&riu=http%3a%2f%2fwww.wallpapers13.com%2fwp-content%2fuploads%2f2015%2f12%2fNature-Lake-Bled.-Desktop-background-image.jpg&ehk=c2raFC95S12P3OL0%2fwdM60ro3oUxsSEajkuGEN%2fsjbo%3d&risl=1&pid=ImgRaw&r=0",
+      "userdp": "https://th.bing.com/th/id/R.00b6dcd72e6c6c971f848b5710a22b14?rik=GUdyoJYQFeNOvw&riu=http%3a%2f%2fbluefaqs.com%2fwp-content%2fuploads%2f2010%2f06%2fRandom-Images-Thumb.jpg&ehk=gjZ1zvnepp3KjV7sLM91JMR92J6tw3FWxn23GyDBcVI%3d&risl=&pid=ImgRaw&r=0",
+      "id": "33e5128b-f152-481b-b01f-f6d81049409a",
+      "user_id": "1",
+      "likes": [
+        "3",
+        "2"
+      ]
+    },
+    {
+      "createdBy": "keyLogic",
+      "detail": "thy",
+      "created_at": "2023-05-13T07:20:34.663Z",
+      "image": "https://th.bing.com/th/id/OIP.1d6tBbNiJTFQNEK_k0sSjQHaFj?pid=ImgDet&rs=1",
+      "userdp": "https://th.bing.com/th/id/R.e1707c345d5ac10c80a674030e606643?rik=pOsTg5KBoLuNvw&riu=http%3a%2f%2fwww.snut.fr%2fwp-content%2fuploads%2f2015%2f08%2fimage-de-paysage.jpg&ehk=1O5SWKkGpZ8yU%2b%2fAnLXG1v8k6BKxgyiXgHbOWBW1ir0%3d&risl=1&pid=ImgRaw&r=0",
+      "id": "bce6578e-7b2a-4918-a0e2-c588e0df9e93",
+      "user_id": "2",
+      "likes": [
+        "2",
+        "1"
+      ]
+    }
+  ],
+  "reels": [
+    {
+      "id": "12212",
+      "username": "user4",
+      "url": "https://www.youtube.com/shorts/Z0T-gbE8su0"
+    },
+    {
+      "id": "1221ty2",
+      "username": "user4",
+      "url": "https://www.youtube.com/shorts/EsPb3B_7lRE"
+    },
+    {
+      "id": "1rety2212",
+      "username": "user4",
+      "url": "https://www.youtube.com/shorts/zCwIh5veGK4"
+    },
+    {
+      "id": "12gt212",
+      "username": "user5",
+      "url": "https://www.youtube.com/shorts/5h9RZtaoSgc"
+    }
+  ],
+  "comments": [
+    {
+      "id": "b8694dd4-5080-42f3-86b3-cfd0235c95e8",
+      "post_id": "33e5128b-f152-481b-b01f-f6d81049409a",
+      "comment_text": "uuu bbb",
+      "user_id": "2",
+      "comment_dp": "https://th.bing.com/th/id/R.e1707c345d5ac10c80a674030e606643?rik=pOsTg5KBoLuNvw&riu=http%3a%2f%2fwww.snut.fr%2fwp-content%2fuploads%2f2015%2f08%2fimage-de-paysage.jpg&ehk=1O5SWKkGpZ8yU%2b%2fAnLXG1v8k6BKxgyiXgHbOWBW1ir0%3d&risl=1&pid=ImgRaw&r=0",
+      "comment_by": "keyLogic"
+    },
+    {
+      "id": "81f59f67-8fb3-4ca9-988d-428e9d03156e",
+      "post_id": "4ecfa7f9-e7c6-4dc3-afb6-463288a489a0",
+      "comment_text": "super nova hhhhh\n",
+      "user_id": "2",
+      "comment_dp": "https://wallpapercave.com/wp/wp4483346.jpg",
+      "comment_by": "Bhavik"
+    },
+    {
+      "id": "9bc374bf-9eb0-40de-8a94-998147ae8241",
+      "post_id": "bce6578e-7b2a-4918-a0e2-c588e0df9e93",
+      "comment_text": "rtg",
+      "user_id": "2",
+      "comment_dp": "https://wallpapercave.com/wp/wp4483346.jpg",
+      "comment_by": "Bhavik"
+    },
+    {
+      "id": "11efdb89-fd8f-493e-b55b-b8f41e022aea",
+      "post_id": "bce6578e-7b2a-4918-a0e2-c588e0df9e93",
+      "comment_text": "rtyhtrh",
+      "user_id": "2",
+      "comment_dp": "https://wallpapercave.com/wp/wp4483346.jpg",
+      "comment_by": "Bhavik"
+    },
+    {
+      "id": "a06dcee8-6df8-47c9-8acd-4ea676a6b6bc",
+      "post_id": "bce6578e-7b2a-4918-a0e2-c588e0df9e93",
+      "comment_text": "444",
+      "user_id": "1",
+      "comment_dp": "https://cdn.statusqueen.com/dpimages/thumbnail/dp_images_8-1279.jpg",
+      "comment_by": "Bhavik Savani"
+    },
+    {
+      "id": "8575be17-d992-472e-9d28-667e29afc44f",
+      "post_id": "4ecfa7f9-e7c6-4dc3-afb6-463288a489a0",
+      "comment_text": "1234",
+      "user_id": 1,
+      "comment_dp": "https://cdn.statusqueen.com/dpimages/thumbnail/dp_images_8-1279.jpg",
+      "comment_by": "Bhavik Savani"
+    },
+    {
+      "id": "8315985a-7a5f-4e04-9d2b-ab4e0e0f0f7f",
+      "post_id": "4ecfa7f9-e7c6-4dc3-afb6-463288a489a0",
+      "comment_text": "bbbbbbbb",
+      "user_id": 1,
+      "comment_dp": "https://cdn.statusqueen.com/dpimages/thumbnail/dp_images_8-1279.jpg",
+      "comment_by": "Bhavik Savani"
+    }
+  ],
+  "friends": [
+    {
+      "user_dp": "https://wallpapercave.com/wp/wp3274856.jpg",
+      "name": "ravi",
+      "id": "111",
+      "status": "inactive"
+    },
+    {
+      "user_dp": "https://th.bing.com/th/id/R.f9658df126c5934773ab69265befe527?rik=mNZX9ZF6BxrfLg&riu=http%3a%2f%2fwww.osmpic.com%2fwp-content%2fuploads%2f2019%2f03%2fPicsArt_03-24-02.07.01-1024x1024.jpg&ehk=P2uChCMZ%2bclSDAtjOqG3knDc0Jg7s8R0jY%2bFLucYHhQ%3d&risl=&pid=ImgRaw&r=0",
+      "name": "shani",
+      "id": "1115",
+      "status": "active"
+    },
+    {
+      "user_dp": "https://images.statusfacebook.com/profile_pictures/creative/creative-whatsapp-dp-66.jpg",
+      "name": "subojit",
+      "id": "115",
+      "status": "active"
+    },
+    {
+      "user_dp": "https://i0.wp.com/cultofdigital.com/wp-content/uploads/2020/02/attractive-whatsapp-dp-2.jpg",
+      "name": "shani",
+      "id": "505",
+      "status": "inactive"
+    }
+  ],
+  "markerplace": [
+    {
+      "title": "",
+      "image": "https://d2xamzlzrdbdbn.cloudfront.net/products/1f1c25d4-fbf8-4456-849f-182584f4f58522290641_182x182.jpg",
+      "price": "18999",
+      "detail": " OnePlus Nord CE 2 Lite 5G (6 GB RAM, 128 GB ROM, Blue Tide)",
+      "location": "Navsari,Gujarat"
+    },
+    {
+      "image": "https://d2xamzlzrdbdbn.cloudfront.net/products/e341bd24-8470-435d-9853-48d1adeef4b222160721_182x182.jpg",
+      "price": "20999",
+      "detail": "Redmi Note 11 Pro + 5G (6 GB RAM, 128 GB ROM, Stealth Black)",
+      "location": "Vadodara,Gujarat"
+    }
+  ],
+  "video": [
+    {
+      "id": "15",
+      "username": "Garuda",
+      "dp": "https://th.bing.com/th/id/OIP.406O0xJmFfSwOEis-_m7DQHaFS?pid=ImgDet&rs=1",
+      "date": "",
+      "title": "video",
+      "description": " dfg  dfgrgeg 5 gregrfvdsvc rgnr g rg regreg gtgerg regergregregre teret rete rtert tyte  tyte tyte tyte tyte tyte tyte tyte tyte jkbh bg b           wdw",
+      "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+      "likes": 5255,
+      "comments": 915,
+      "views": 129854
+    },
+    {
+      "id": "1584",
+      "username": "Panda",
+      "dp": "https://i.pinimg.com/originals/e5/6b/79/e56b799b365e63c41041feb38fb7e965.jpg",
+      "date": "",
+      "title": "video",
+      "description": "dfg dfgrgeg 5 gregrfvdsvc rgnr g rg regreg gtgerg regergregregre teret rete rtert tyte tyte tyte tyte tyte tyte tyte tyte tyte jkbh bg b wdw",
+      "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+      "likes": 2556,
+      "comments": 156,
+      "views": 298545
+    },
+    {
+      "id": "1587",
+      "username": "Vikram",
+      "dp": "https://th.bing.com/th/id/R.29953b625d25698be1351ebecb850cc7?rik=hJ8rBXk7D7YzZg&riu=http%3a%2f%2f4.bp.blogspot.com%2f-2Kk0pvOUsy0%2fUS5UTPN_MsI%2fAAAAAAAAT2U%2fGUn85cBFtoo%2fs1600%2fPeaceful%2bSceneries%2bWallpapers%2b1.jpg&ehk=%2bzvPju3bOA7GB8TiquJ9hsF3DahJEHXW891mRjxAk2w%3d&risl=&pid=ImgRaw&r=0",
+      "date": "",
+      "title": "video",
+      "description": " dfg  dfgrgeg 5 gregrfvdsvc rgnr g rg regreg gtgerg regergregregre teret rete rtert tyte  tyte tyte tyte tyte tyte tyte tyte tyte jkbh bg b           wdw",
+      "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
+      "likes": 5568,
+      "comments": 560,
+      "views": 985456
+    }
+  ],
+  "carousel_image": [
+    {
+      "id": 1234,
+      "url": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/c9358b80939295.5cefaac3d70bb.jpg",
+      "title": "img1"
+    },
+    {
+      "id": 126734,
+      "url": "https://th.bing.com/th/id/R.e9f9679c219919e7ef8f345a7560d2f2?rik=2wOXopGlpupUFg&riu=http%3a%2f%2fblog.upshotcommerce.com%2fwp-content%2fuploads%2f2015%2f05%2fiStock_000036173778_Full-1024x699.jpg&ehk=1erDX5%2fEcloTDxsuOYROreiCGRE7o4nuPspn%2b0kSdXk%3d&risl=&pid=ImgRaw&r=0",
+      "title": "img2"
+    },
+    {
+      "id": 1786234,
+      "url": "https://www.photozworld.com/blog/wp-content/uploads/2019/09/apparel-photography-768x402.jpg",
+      "title": "img3"
+    },
+    {
+      "id": 1287634,
+      "url": "https://images.odishatv.in/uploadimage/library/16_9/16_9_0/Retail-Trade_1618419797.jpg",
+      "title": "img4"
+    },
+    {
+      "id": 1563234,
+      "url": "https://fintechnations.com/wp-content/uploads/2021/01/online-shopping-3d-rendering-clothes-online-shop-online-payment-delivery-concept-sale-banner-bag-dis-scaled.jpg",
+      "title": "img5"
+    }
+  ],
+  "product": [
+    {
+      "productname": "OnePlus Nord CE",
+      "category": "electronics",
+      "subcategory": "mobile",
+      "price": 18999,
+      "stock": 5,
+      "detail": "Camera: 64MP Main Camera with EIS; 2MP Depth Lens and 2MP Macro Lens; Front (Selfie) Camera: 16MP Sony IMX471 Camera Features: AI scene enhancement, ",
+      "product_image": "https://m.media-amazon.com/images/I/71AvQd3VzqL._SX679_.jpg",
+      "id": 1
+    },
+    {
+      "productname": "HP 15s, 11th Gen Intel Core i3 8GB RAM/1TB HDD+256 GB",
+      "category": "electronics",
+      "subcategory": "lsptop",
+      "price": 38999,
+      "stock": 6,
+      "detail": "Processor:Intel Core i3-1115G4(up to 4.1 GHz with Intel Turbo Boost Technology(2g), 6 MB L3 cache, 2 cores)|Memory: 8 GB DDR4-3200 MHz RAM (1 x 8 GB) ",
+      "product_image": "https://m.media-amazon.com/images/I/51sZaNaWzZL._AC_SR400,600_.jpg",
+      "id": 2
+    },
+    {
+      "productname": "Oppo A78 5G",
+      "category": "electronics",
+      "subcategory": "mobile",
+      "price": 18999,
+      "stock": 6,
+      "detail": "5000 mAh Battery with 33W SUPERVOOC Charger| 50MP AI Camera | 90Hz Refresh Rate | with No Cost EMI/Additional Exchange Offers",
+      "product_image": "https://m.media-amazon.com/images/I/8104evx11QL._SX679_.jpg",
+      "id": 3
+    },
+    {
+      "productname": "Noise Pulse Go Buzz Smart Watch",
+      "price": 1799,
+      "category": "electronics",
+      "subcategory": "smartwatch",
+      "stock": 8,
+      "detail": "harp and bright display: The 1.69’’ TFT display with 240*280px and 550 nits brightness ensures visual treat every time you look at the watch.",
+      "product_image": "https://m.media-amazon.com/images/I/61akt30bJsL._SX522_.jpg",
+      "id": 4
+    },
+    {
+      "productname": "Samsung Galaxy M04 Dark Blue, 4GB RAM, 64GB Storage",
+      "price": 5999,
+      "stock": 3,
+      "category": "electronics",
+      "subcategory": "mobile",
+      "detail": "Upto 8GB RAM with RAM Plus | MediaTek Helio P35 | 5000 mAh Battery",
+      "product_image": "https://m.media-amazon.com/images/I/41kg-%2BXWoxL._SX300_SY300_QL70_FMwebp_.jpg",
+      "id": 543
+    },
+    {
+      "productname": "Samsung Galaxy S21",
+      "category": "electronics",
+      "subcategory": "smartphones",
+      "price": 799,
+      "stock": 10,
+      "detail": "Display: 6.2-inch Dynamic AMOLED 2X, Resolution: 2400 x 1080 pixels, Camera: Triple rear camera setup (64MP+12MP+12MP), Front Camera: 10MP, Memory: 8GB RAM, Storage: 128GB",
+      "product_image": "https://m.media-amazon.com/images/I/71L2iBSyyOL._SL1500_.jpg",
+      "id": 2546
+    },
+    {
+      "productname": "Sony WH-1000XM4",
+      "category": "electronics",
+      "subcategory": "headphones",
+      "price": 349,
+      "stock": 3,
+      "detail": "Industry-leading noise cancellation, Premium sound quality, Bluetooth 5.0, Battery life: Up to 30 hours, Quick charge: 10 minutes for 5 hours of playback",
+      "product_image": "https://m.media-amazon.com/images/I/71o8Q5XJS5L._SL1500_.jpg",
+      "id": 3546
+    },
+    {
+      "productname": "TECHNOVIEW Wireless WiFi IP CCTV Security 1080p 12mp ",
+      "price": 2650,
+      "stock": 30,
+      "category": "baby",
+      "subcategory": "jeans",
+      "detail": "【FULL HD 1080P & Colorful Night Vision PTZ Camera 】Everyone wants to keep an eye on what he concerns about at all times. With FULL HD 1080P resolution",
+      "product_image": "https://m.media-amazon.com/images/I/513QYrGfAGL._SX522_.jpg",
+      "id": 6
+    },
+    {
+      "productname": "Samsung 80 cm (32 Inches) Wondertainment Series HD Ready LED Smart",
+      "price": 12999,
+      "stock": 4,
+      "category": "baby",
+      "subcategory": "shirts",
+      "detail": "Samsung 80 cm (32 Inches) Wondertainment Series HD Ready LED Smart",
+      "product_image": "https://m.media-amazon.com/images/I/71a4ZQNqTiL._SX522_.jpg",
+      "id": 7
+    },
+    {
+      "productname": "Sony WH-1000XM4",
+      "category": "electronics",
+      "subcategory": "headphones",
+      "price": 349,
+      "stock": 3,
+      "detail": "Industry-leading noise cancellation, Premium sound quality, Bluetooth 5.0, Battery life: Up to 30 hours, Quick charge: 10 minutes for 5 hours of playback",
+      "product_image": "https://m.media-amazon.com/images/I/71o8Q5XJS5L._SL1500_.jpg",
+      "id": 35467
+    },
+    {
+      "productname": "Apple MacBook Pro",
+      "category": "electronics",
+      "subcategory": "laptops",
+      "price": 1999,
+      "stock": 8,
+      "detail": "Display: 13.3-inch Retina display, Processor: 8-core Apple M1 chip, Memory: 16GB RAM, Storage: 512GB SSD, Graphics: Integrated 8-core GPU, Operating System: macOS",
+      "product_image": "https://th.bing.com/th/id/R.d539a6f9a31380296c654da49b83717d?rik=Rwroc%2f1v%2fIP6dA&riu=http%3a%2f%2fwww.theworldsbestandworst.com%2fwp-content%2fuploads%2f2019%2f07%2fApple-Macbook-Pro-15-Inch2019-Overview.jpg&ehk=k6d7MVVwdwGjNI9vWxZMSqDMwjA%2b8B5nB6LxCv5Bp8w%3d&risl=&pid=ImgRaw&r=0",
+      "id": 45467
+    },
+    {
+      "productname": "Nike Air Max 270",
+      "category": "men",
+      "subcategory": "shoes",
+      "price": 129,
+      "stock": 15,
+      "detail": "Color: Black/White, Upper Material: Synthetic, Sole Material: Rubber, Closure: Lace-Up, Shoe Width: Medium",
+      "product_image": "https://media.gettyimages.com/photos/nike-air-max-90-hyperfuse-picture-id458600697",
+      "id": 55437582
+    },
+    {
+      "productname": "Blouse",
+      "category": "women",
+      "subcategory": "blouses",
+      "price": 79,
+      "stock": 5,
+      "detail": "Color: Black/White, Material: Cotton, Sleeve Length: Long Sleeve",
+      "product_image": "https://i.pinimg.com/originals/66/f8/f6/66f8f67b2edd0b72b8cab75101489309.png",
+      "id": 54377582
+    },
+    {
+      "productname": "Sweater",
+      "category": "women",
+      "subcategory": "sweaters",
+      "price": 59,
+      "stock": 10,
+      "detail": "Color: Black/White, Material: Cotton, Sleeve Length: Long Sleeve",
+      "product_image": "https://i.pinimg.com/originals/9f/c9/05/9fc9051b140ee40838e55e14cbbd26da.jpg",
+      "id": 54387852
+    },
+    {
+      "productname": "Pants",
+      "category": "women",
+      "subcategory": "pants",
+      "price": 49,
+      "stock": 15,
+      "detail": "Color: Black/White, Material: Cotton, Length: Full Length",
+      "product_image": "https://prodmedia.medikabazaar.com/media/catalog/product/d3c6ac1bbe4d4a6db_1_100_1_base_image.jpeg?width=560&height=560&store=default&image-type=image",
+      "id": 54397852
+    },
+    {
+      "productname": "Jacket",
+      "category": "women",
+      "subcategory": "jackets",
+      "price": 99,
+      "stock": 10,
+      "detail": "Color: Black/White, Material: Cotton, Sleeve Length: Long Sleeve",
+      "product_image": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F8f%2Fbd%2F8fbdc8363140d0da31f329a23e84e3ce1b91bea9.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]",
+      "id": 5440527
+    },
+    {
+      "productname": "Shoes",
+      "category": "women",
+      "subcategory": "shoes",
+      "price": 79,
+      "stock": 5,
+      "detail": "Color: Black/White, Material: Leather, Heel Height: 3 inches",
+      "product_image": " https://th.bing.com/th/id/OIP.h7v--ZaB86VLz_anNXiz2wHaGn?pid=ImgDet&rs=1",
+      "id": 544158
+    },
+    {
+      "productname": "Bag",
+      "category": "women",
+      "subcategory": "bags",
+      "price": 59,
+      "stock": 10,
+      "detail": "Color: Black/White, Material: Leather, Size: Medium",
+      "product_image": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F46%2F7d%2F467d2b940bc641eb28bd870d79f73033f8fdcee5.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bladies_accessories_bags_shouldercrossbags%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+      "id": 5442875
+    },
+    {
+      "productname": "Hat",
+      "category": "women",
+      "subcategory": "hats",
+      "price": 29,
+      "stock": 15,
+      "detail": "Color: Black/White, Material: Cotton, Size: One Size Fits All",
+      "product_image": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F04%2Fdc%2F04dc81c63d91cd7e886e89b8f16eaacbbf64bbfd.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+      "id": 5443875
+    },
+    {
+      "productname": "Accessories",
+      "category": "women",
+      "subcategory": "accessories",
+      "price": 19,
+      "stock": 10,
+      "detail": "Color: Black/White, Material: Metal, Size: One Size Fits All",
+      "product_image": "https://th.bing.com/th/id/R.90060ac35b97d311e9dbaeefdbd5c87d?rik=JGGSLQfMgW7Paw&riu=http%3a%2f%2fwww.trendmantra.com%2fwp-content%2fuploads%2f2016%2f05%2farticle_271_12.jpg&ehk=kFpRNckZNDvkxHazmPd5YxjlTtUf061gnZdHIVkVxhU%3d&risl=&pid=ImgRaw&r=0",
+      "id": 54447
+    },
+    {
+      "productname": "Dress",
+      "category": "women",
+      "subcategory": "dresses",
+      "price": 129,
+      "stock": 15,
+      "detail": "Color: Black/White, Material: Cotton, Length: Knee-length, Sleeve Length: Short Sleeve",
+      "product_image": "https://th.bing.com/th/id/R.0aa9e65e523f34d59db062c37611f2a6?rik=pQUkRuzaulwPhg&riu=http%3a%2f%2fimage26.stylesimo.com%2fo_img%2f2017%2f08%2f09%2f231420-10380357%2fwomen-s-elegant-solid-evening-pleated-chiffon-dress.jpg&ehk=QynjssnOzvA%2fXl9QTSY03RoGcE0DYfVmVYTUABtPA7o%3d&risl=&pid=ImgRaw&r=0",
+      "id": 542335
+    },
+    {
+      "productname": "Skirt",
+      "category": "women",
+      "subcategory": "skirts",
+      "price": 99,
+      "stock": 10,
+      "detail": "Color: Black/White, Material: Cotton, Length: Knee-length",
+      "product_image": "https://th.bing.com/th/id/OIP.d4G03RtQSTCIYh9ErAMCmwHaLH?pid=ImgDet&rs=1",
+      "id": 54836
+    },
+    {
+      "productname": "Amazon Brand - Solimo Tempel Fabric 3 Seater Sofa cum Bed (Dark Brown)",
+      "price": 11999,
+      "stock": "9",
+      "category": "women",
+      "subcategory": "t-shirts",
+      "detail": "Dimensions:- Length: 182 cm (71.65 in); Width: 86 cm (33.85 in); Height: 81 cm (31.88 in); Converts to Bed, Length: 182 cm (71.65 in); Width: 111 cm",
+      "product_image": "https://m.media-amazon.com/images/I/9107VB4hjcL._SX679_.jpg",
+      "id": 8546
+    },
+    {
+      "productname": "Adidas Originals Superstar",
+      "category": "men",
+      "subcategory": "shoes",
+      "price": 89,
+      "stock": 10,
+      "detail": "Color: White/Black, Upper Material: Leather, Sole Material: Rubber, Closure: Lace-Up, Shoe Width: Regular",
+      "product_image": "https://www.zappos.com/images/z/3/0/2/3/4/0/3023404-p-4x.jpg",
+      "id": 5436546435
+    },
+    {
+      "productname": "Levi's 501 Original Fit Jeans",
+      "category": "men",
+      "subcategory": "jeans",
+      "price": 59,
+      "stock": 20,
+      "detail": "Color: Dark Stonewash, Material: 100% Cotton, Fit: Straight, Closure: Button Fly, Wash: Machine wash",
+      "product_image": "https://th.bing.com/th?id=OIF.UxsdaW%2fHyos7WaZ9lNc1yw&pid=ImgDet&rs=1",
+      "id": 543435776
+    },
+    {
+      "productname": "Ray-Ban Classic Aviator Sunglasses",
+      "category": "men",
+      "subcategory": "accessories",
+      "price": 149,
+      "stock": 8,
+      "detail": "Frame Material: Metal, Lens Material: Glass, Lens Color: Green Classic G-15, UV Protection: 100%, Temple Length: 135 mm",
+      "product_image": "https://th.bing.com/th/id/OIP.tsAl25F3tUVvndmPESBNRwHaHa?pid=ImgDet&rs=1",
+      "id": 543546854
+    },
+    {
+      "productname": "Tommy Hilfiger Men's Polo Shirt",
+      "category": "men",
+      "subcategory": "shirts",
+      "price": 49,
+      "stock": 12,
+      "detail": "Color: Navy Blue, Material: 100% Cotton, Fit: Classic Fit, Sleeve Type: Short Sleeve, Collar Type: Polo",
+      "product_image": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1675179860_4647028.jpg?format=webp&w=1080&dpr=1.0",
+      "id": 5439786546
+    },
+    {
+      "productname": "Tommy Hilfiger Men's Polo Shirt",
+      "category": "men",
+      "subcategory": "shirt",
+      "price": 49,
+      "stock": 12,
+      "detail": "Color: Navy Blue, Material: 100% Cotton, Fit: Classic Fit, Sleeve Type: Short Sleeve, Collar Type: Polo",
+      "product_image": "https://img01.ztat.net/article/spp-media-p1/5d9b2d44f6cf3d98892704eac5d8de79/208652cb145a4f0d95542b1a716d6c7e.jpg?imwidth=762",
+      "id": 546895439
+    },
+    {
+      "productname": "Levi's Men's 501 Original Fit Jeans",
+      "category": "men",
+      "subcategory": "jeans",
+      "price": 79,
+      "stock": 10,
+      "detail": "Color: Blue, Material: 100% Cotton, Fit: Regular Fit, Rise: Mid-Rise, Leg: Straight Leg",
+      "product_image": "https://th.bing.com/th/id/R.2afcf204c447236d25b7a8659e0009c2?rik=Pb2SULhzC5bKYw&riu=http%3a%2f%2fep.yimg.com%2fay%2flangstons%2flevi-s-reg-men-s-501-reg-original-fit-jeans-stonewashed-114826.jpg&ehk=MSTKjZDRcDx85X74lPXxcYQ54AFqrsrSlAZuRJDCa1A%3d&risl=&pid=ImgRaw&r=0",
+      "id": 5489065440
+    },
+    {
+      "productname": "Adidas Ultraboost 22",
+      "category": "men",
+      "subcategory": "shoes",
+      "price": 149,
+      "stock": 10,
+      "detail": "Color: White/Black, Upper Material: Primeknit, Sole Material: Boost, Closure: Lace-Up, Shoe Width: Medium",
+      "product_image": "https://th.bing.com/th/id/OIP.ofWth7hU458rb-PqVpkjMwHaFa?pid=ImgDet&rs=1",
+      "id": 546547842
+    },
+    {
+      "productname": "Gucci Men's Ace Sneakers",
+      "category": "men",
+      "subcategory": "shoes",
+      "price": 595,
+      "stock": 5,
+      "detail": "Color: White/Red, Upper Material: Leather, Sole Material: Rubber, Closure: Lace-Up, Shoe Width: Medium",
+      "product_image": "https://th.bing.com/th/id/OIP.lGg_xP2kQzEPwixyPwXpfgHaHa?pid=ImgDet&rs=1",
+      "id": 5465546443
+    },
+    {
+      "productname": "Apple Watch Series 7",
+      "category": "men",
+      "subcategory": "watches",
+      "price": 399,
+      "stock": 10,
+      "detail": "Color: Silver, Case Size: 41mm, Display: Retina OLED Display, Processor: S7 SiP, Sensors: Optical Heart Rate Sensor, Electrical Heart Sensor, Blood Oxygen Sensor, Always-On Altimeter, and more",
+      "product_image": "https://smartprobox.com/wp-content/uploads/2021/09/Apple-Watch-Series-7.jpg",
+      "id": 5489565444
+    },
+    {
+      "productname": "Baby Romper",
+      "category": "baby",
+      "subcategory": "clothing",
+      "price": 19,
+      "stock": 10,
+      "detail": "Color: White, Material: Cotton, Sleeve Length: Short Sleeve",
+      "product_image": "https://th.bing.com/th/id/R.21efd0d6b8efa7ef3d29d7aae794c1ec?rik=7jdsIkmE7LeOSA&riu=http%3a%2f%2fkojo-designs.com%2fwp-content%2fuploads%2f2018%2f04%2fIMG_6813.jpg&ehk=VbvDwpE32Ly37it0lRyppMJnx%2fYQIuT0hVcYDNzvLQ0%3d&risl=&pid=ImgRaw&r=0",
+      "id": 5437
+    },
+    {
+      "productname": "Baby Swaddle",
+      "category": "baby",
+      "subcategory": "bedding",
+      "price": 14,
+      "stock": 15,
+      "detail": "Color: Blue, Material: Muslin, Size: Newborn",
+      "product_image": "https://th.bing.com/th/id/OIP.TsUjIrgZyw5iLfAWo8D2PQHaHa?pid=ImgDet&rs=1",
+      "id": 5467546
+    },
+    {
+      "productname": "Baby Car Seat",
+      "category": "baby",
+      "subcategory": "car seats",
+      "price": 299,
+      "stock": 5,
+      "detail": "Color: Black, Material: Plastic, Weight Limit: 50 pounds",
+      "product_image": "https://th.bing.com/th/id/R.ad97a60d2d8c84ebdf1268f39cfbe669?rik=m1c%2bzqHC6r7v1Q&riu=http%3a%2f%2f1.bp.blogspot.com%2f-6Z0TX1qI-js%2fUDYHfNOlKXI%2fAAAAAAAAABs%2fEqkGmOL5iuQ%2fs1600%2fBritax%2bB-Safe%2bInfant%2bCar%2bSeat.jpg&ehk=r2fIDNl0fCxetE2S8o6VmxBi8N09hW2CIRzgcCkPMx4%3d&risl=&pid=ImgRaw&r=0",
+      "id": 5467786546
+    },
+    {
+      "productname": "Baby Stroller",
+      "category": "baby",
+      "subcategory": "strollers",
+      "price": 399,
+      "stock": 10,
+      "detail": "Color: Blue, Material: Metal, Weight Limit: 50 pounds",
+      "product_image": "https://th.bing.com/th/id/OIP.FE1oIMRSHXTPI6bZXSzZmgHaKZ?pid=ImgDet&rs=1",
+      "id": 546867546
+    },
+    {
+      "productname": "Baby Bottle",
+      "category": "baby",
+      "subcategory": "feeding",
+      "price": 9,
+      "stock": 15,
+      "detail": "Color: Blue, Material: Plastic, Size: 8 ounces",
+      "product_image": "https://www.babiesrus.ca/on/demandware.static/-/Sites-toys-master-catalog/default/dw8555d936/images/7F1EE73A_1.jpg",
+      "id": 523467546
+    },
+    {
+      "productname": "Baby Diapers",
+      "category": "baby",
+      "subcategory": "diapers",
+      "price": 24,
+      "stock": 10,
+      "detail": "Size: Newborn, Material: Cotton",
+      "product_image": "https://th.bing.com/th/id/OIP.2nr7EwilbeSUsJytXjhovAHaHa?pid=ImgDet&rs=1",
+      "id": 546907546
+    },
+    {
+      "productname": "Baby Wipes",
+      "category": "baby",
+      "subcategory": "diapers",
+      "price": 12,
+      "stock": 15,
+      "detail": "Size: Large, Material: Cotton",
+      "product_image": "https://th.bing.com/th/id/OIP.1Q7sjV14TPHXeo44hBQEXQHaHa?pid=ImgDet&rs=1",
+      "id": 546567546
+    },
+    {
+      "productname": "Baby Bathtub",
+      "category": "baby",
+      "subcategory": "bath",
+      "price": 29,
+      "stock": 5,
+      "detail": "Color: White, Material: Plastic",
+      "product_image": "https://th.bing.com/th/id/OIP.3aCRjbAfCPG4eDYM7LzIwwHaFv?pid=ImgDet&rs=1",
+      "id": 54623437546
+    },
+    {
+      "productname": "Baby Teether",
+      "category": "baby",
+      "subcategory": "toys",
+      "price": 9,
+      "stock": 10,
+      "detail": "Material: Silicone",
+      "product_image": "https://th.bing.com/th/id/OIP.adPZ0K_6WsvpYBMtCtUV5gHaHa?pid=ImgDet&rs=1",
+      "id": 54677898546
+    }
+  ],
+  "order": [],
+  "cart": []
+}

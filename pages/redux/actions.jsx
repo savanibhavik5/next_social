@@ -58,9 +58,9 @@ export const getAllPosts = (postdata) => {
   };
 };
 
-export const getAllComments = (getallcommentdata) => {
+export const getAllComments = () => {
   return function (dispatch) {
-      axios.get("http://localhost:1234/comments").then((res) => {
+    axios.get("http://localhost:1234/comments").then((res) => {
       dispatch({
         type: "GET_ALL_COMMENTS",
         payload: res.data,
@@ -86,9 +86,15 @@ export const updateComment = (updatedComment) => {
 };
 
 export const deleteComment = (data) => {
-  
   return function (dispatch) {
     axios.delete(`http://localhost:1234/comments/${data.id}`).then((res) => {
+      dispatch(getAllComments(data?.id));
+    });
+  };
+};
+export const deletePost = (data) => {
+  return function (dispatch) {
+    axios.delete(`http://localhost:1234/posts/${data.id}`).then((res) => {
       dispatch(getAllComments(data?.id));
     });
   };
@@ -98,6 +104,14 @@ export const newComment = (data) => {
   return function (dispatch) {
     axios?.post("http://localhost:1234/comments", data).then((res) => {
       dispatch(getAllComments(data));
+    });
+  };
+};
+
+export const newPostData = (data) => {
+  return function (dispatch) {
+    axios?.post("http://localhost:1234/posts", data).then((res) => {
+      dispatch(getAllPosts(data));
     });
   };
 };
