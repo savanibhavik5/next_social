@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import New_Post from "./New_Post";
 import Index from "./Posts";
 import { getAllComments, getAllPosts } from "../redux/actions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export const getStaticProps = async () => {
   const postdata = await fetch("http://localhost:1234/posts").then((res) =>
@@ -19,6 +19,7 @@ export const getStaticProps = async () => {
   };
 };
 const Posts = ({ postdata, commentsdata }) => {
+  const posts = useSelector(state => state.user.allpost)
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllPosts(postdata));
@@ -28,7 +29,7 @@ const Posts = ({ postdata, commentsdata }) => {
     <Fragment>
       <div className="m3">
         <New_Post />
-        {postdata.map((post, index) => {
+        {posts.map((post, index) => {
           return (
             <Index key={post.id} allpost={post} allcomments={commentsdata} />
           );

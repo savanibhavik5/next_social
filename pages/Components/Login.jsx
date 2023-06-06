@@ -62,7 +62,6 @@ const Login = () => {
     <div>
       <Head> Login</Head>
       <section className="background-radial-gradient overflow-hidden">
-      
         <section className="bg-light ">
           <div className="container-fluid h-custom">
             <div className="row min-vh-100 d-flex justify-content-center align-items-center h-100">
@@ -74,9 +73,7 @@ const Login = () => {
                 />
               </div>
               <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1 bg-glass  p-3 rounded">
-                <form
-                  onSubmit={login}
-                >
+                <form onSubmit={login}>
                   <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                     <p className="lead fw-normal text-dark mb-0 me-3">
                       Sign In With

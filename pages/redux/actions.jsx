@@ -49,11 +49,13 @@ export const setSingleUser = (data) => {
   };
 };
 
-export const getAllPosts = (postdata) => {
+export const getAllPosts = () => {
   return function (dispatch) {
-    dispatch({
-      type: "GET_ALL_POSTS",
-      payload: postdata,
+    axios.get("http://localhost:1234/posts").then((res) => {
+      dispatch({
+        type: "GET_ALL_POSTS",
+        payload: res.data,
+      });
     });
   };
 };

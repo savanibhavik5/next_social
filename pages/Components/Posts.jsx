@@ -6,12 +6,10 @@ import {
   getAllPosts,
   newComment,
 } from "../redux/actions";
-import New_Post from "./New_Post";
 import Commentcompo from "./Commentcompo";
-import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 
-const Index = ({ allpost, allcomments }) => {
+const Index = ({ allpost }) => {
   const {
     user_id,
     createdBy,
@@ -31,18 +29,15 @@ const Index = ({ allpost, allcomments }) => {
   };
 
   useEffect(() => {
-    dispatch(getAllPosts(posts,allpost));
-    dispatch(getAllComments(allcomments));
+    dispatch(getAllPosts());
+    dispatch(getAllComments());
   }, []);
-
-  const posts = useSelector((state) => state?.user?.allpost);
 
   const AllCommnets = useSelector((state) => state.user.allcomments);
 
   const fetchUser = useSelector((state) => state?.user?.user[0]);
   let currentUserId = "" + fetchUser?.id;
 
-  
   const commentHandle = () => {
     dispatch(
       newComment({
@@ -56,8 +51,10 @@ const Index = ({ allpost, allcomments }) => {
     );
     setComment("");
   };
+  
   const del_post = (id) => {
     dispatch(deletePost({ id }));
+    dispatch(getAllPosts())
   };
 
   const filterComment = AllCommnets.filter((com) => com?.post_id === postid);
@@ -110,11 +107,10 @@ const Index = ({ allpost, allcomments }) => {
           </div>
         </div>
         <div className="m-2"> {detail}</div>
-        {/* <div>current login:-{fetchUser[0]?.fullname}</div> */}
         <div className="d-flex justify-content-center p-3 ">
           <img
             src={image}
-            className="post_img rounded"
+            className={`post_img rounded ${image===""||null||undefined?("d-none"):("d-block")}`}
             style={{ width: "100%" }}
             alt="error in image loading"
           />
@@ -122,7 +118,7 @@ const Index = ({ allpost, allcomments }) => {
         <div className="d-flex justify-content-around mt-3">
           <button
             className=" form-control post-button d-flex justify-content-center align-items-center m-2"
-            // onClick={likeHandle.bind(this, postid, likes)}
+            onClick={likeHandle.bind(this, postid, likes)}
           >
             {!liked ? (
               <i className="fa-solid fa-thumbs-up text-primary "></i>

@@ -2,27 +2,25 @@ import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
-import Link from "next/link";
 import { useSelector, useDispatch } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
-import { getAllComments, getAllPosts, newPostData } from "../redux/actions";
+import { getAllPosts, newPostData } from "../redux/actions";
 
-const New_Post = ({ allpost,allcomments }) => {
+const New_Post = () => {
   const [show, setShow] = useState(false);
   let [inputpost, setInputPost] = useState("");
   let [postimage, setPostImage] = useState("");
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   let dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getAllPosts(posts,allpost));
-    dispatch(getAllComments(allcomments));
-  }, []);
 
   const fetchUser = useSelector((state) => state?.user?.user[0]);
-  const posts = useSelector((state) => state?.user?.allpost);
-// console.log(posts)
+  useEffect(() => {
+    dispatch(getAllPosts());
+  }, []);
+
   const addNewPost = () => {
+    console.log(fetchUser?.fullname,"11111111111")
     dispatch(
       newPostData({
         createdBy: fetchUser?.fullname,
@@ -30,7 +28,7 @@ const New_Post = ({ allpost,allcomments }) => {
         id: uuidv4(),
         user_id: fetchUser?.id,
         image: postimage,
-        user_dp: fetchUser?.userdp,
+        userdp: fetchUser?.userdp,
         likes: [],
       })
     );
@@ -39,13 +37,14 @@ const New_Post = ({ allpost,allcomments }) => {
     handleClose(true);
   };
 
+  
   return (
     <div className="col-md-12 col-lg-8 col-xl-6 offset-xl-3 offset-lg-2 shadow rounded rounded-3 mb-4  p-3">
       <Modal
         show={show}
         onHide={handleClose}
         size="md"
-        aria-labelledBy="contained-modal-title-vcenter"
+        aria-labelledby="contained-modal-title-vcenter"
         centered
       >
         <Modal.Header closeButton>

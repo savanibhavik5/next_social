@@ -86,3 +86,13 @@ const MyApp = ({ Component, pageProps }) => {
 };
 
 export default wrapper.withRedux(MyApp);
+{/* <Provider store={store}>
+{data !== null ? (
+  <>
+    <Header />
+    <Component {...pageProps} />;
+  </>
+) : (
+  <Login />
+)}
+</Provider> */}

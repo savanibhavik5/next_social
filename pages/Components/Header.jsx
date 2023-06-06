@@ -36,7 +36,7 @@ const Header = () => {
             <span className="sr-only">Open user menu</span>
             <img
               className="w-8 h-8  rounded-full"
-              // src={fetchUser[0]?.userdp}
+              src={fetchUser[0]?.userdp}
               alt="user photo"
             />
           </button>
